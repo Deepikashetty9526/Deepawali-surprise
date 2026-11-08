@@ -3,707 +3,433 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070d25">
-<title>For My Favourite Person ❤️</title>
+<title>Happy Deepavali, Bangaara! ❤️</title>
 
 <style>
 :root {
-  --night: #070d25;
-  --blue: #111d45;
-  --gold: #f8cf76;
-  --cream: #fff5df;
-  --muted: #c7cbe0;
+  --night:#070d25;
+  --blue:#12234b;
+  --gold:#f8cf76;
+  --cream:#fff5df;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* { box-sizing:border-box; }
 body {
-  margin: 0;
-  min-height: 100vh;
-  color: var(--cream);
-  background:
-    radial-gradient(ellipse at 50% 0%, #1b2c61 0%, transparent 55%),
-    var(--night);
-  font-family: Georgia, "Times New Roman", serif;
-  overflow-x: hidden;
+  margin:0;
+  color:var(--cream);
+  background:radial-gradient(ellipse at top,#20386b,var(--night) 65%);
+  font-family:Georgia,"Times New Roman",serif;
+  min-height:100vh;
+  overflow-x:hidden;
 }
-button {
-  font: inherit;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-button:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 4px;
-}
-#sky {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
+button { font:inherit; cursor:pointer; }
+#sky { position:fixed; inset:0; pointer-events:none; overflow:hidden; }
 .star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 9px white;
-  animation: twinkle var(--speed, 3s) infinite alternate;
+  position:absolute; width:3px; height:3px; border-radius:50%;
+  background:white; box-shadow:0 0 9px white;
+  animation:twinkle 2.5s infinite alternate;
 }
-@keyframes twinkle {
-  from { opacity: .2; transform: scale(.7); }
-  to { opacity: 1; transform: scale(1.4); }
-}
-main, header, footer { position: relative; z-index: 1; }
+@keyframes twinkle { to { opacity:.25; transform:scale(.5); } }
 header {
-  padding: 20px 18px;
-  text-align: center;
-  color: var(--gold);
-  letter-spacing: 2px;
-  font-size: 12px;
+  position:relative; text-align:center; padding:22px 10px;
+  color:var(--gold); font:11px Arial,sans-serif; letter-spacing:3px;
 }
-header span { opacity: .8; }
+.progress { width:190px; height:3px; background:#ffffff22; margin:0 auto 20px; }
+#bar { width:0; height:100%; background:var(--gold); transition:.4s; }
 section {
-  display: none;
-  width: min(100% - 32px, 760px);
-  min-height: 76vh;
-  margin: 0 auto;
-  padding: 35px 0 65px;
-  text-align: center;
-  animation: appear .65s ease both;
+  display:none; position:relative; width:min(100% - 30px,680px);
+  min-height:76vh; margin:auto; padding:25px 0 55px;
+  text-align:center; animation:fade .6s ease;
 }
-section.active { display: flex; flex-direction: column; align-items: center; justify-content: center; }
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+section.active { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+@keyframes fade { from {opacity:0;transform:translateY(12px)} to {opacity:1;transform:translateY(0)} }
 .eyebrow {
-  color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font: 11px Arial, sans-serif;
-  margin-bottom: 18px;
+  color:var(--gold); font:11px Arial,sans-serif;
+  letter-spacing:3px; text-transform:uppercase; margin-bottom:18px;
 }
-h1, h2 {
-  font-weight: normal;
-  line-height: 1.2;
-  margin: 0 0 18px;
+h1,h2 { font-weight:normal; line-height:1.25; margin:0 0 18px; }
+h1 { font-size:clamp(38px,9vw,65px); }
+h2 { font-size:clamp(28px,6vw,43px); }
+.gold { color:var(--gold); }
+p { max-width:500px; color:#d0d5e8; font:14px/1.9 Arial,sans-serif; margin:0 auto 22px; }
+.diya {
+  font-size:110px; margin:12px 0 20px;
+  filter:drop-shadow(0 0 18px #ffb536);
+  transition:.4s;
 }
-h1 { font-size: clamp(36px, 8vw, 66px); }
-h2 { font-size: clamp(29px, 6vw, 45px); }
-p {
-  color: var(--muted);
-  font: 15px/1.9 Arial, sans-serif;
-  max-width: 510px;
-  margin: 0 auto 22px;
-}
-.gold { color: var(--gold); }
-.big-diya {
-  font-size: clamp(90px, 22vw, 150px);
-  margin: 5px 0 18px;
-  filter: drop-shadow(0 0 25px #ffad44);
-  animation: diyaGlow 2s infinite alternate;
-}
-@keyframes diyaGlow {
-  from { filter: drop-shadow(0 0 12px #ffad44); }
-  to { filter: drop-shadow(0 0 38px #ffc64c); }
+.diya.lit { animation:glow 1.4s infinite alternate; }
+@keyframes glow {
+  to { filter:drop-shadow(0 0 45px #ffcb4d); transform:scale(1.07); }
 }
 .btn {
-  border: 1px solid #ffe3a0;
-  background: linear-gradient(135deg, #ffe8a3, #e9ad39);
-  color: #28203a;
-  border-radius: 100px;
-  padding: 14px 25px;
-  font: bold 13px Arial, sans-serif;
-  box-shadow: 0 0 22px #f5c45b33;
-  transition: transform .2s, box-shadow .2s;
-  margin: 5px;
+  padding:14px 24px; margin:5px;
+  border:1px solid #ffe4a0; border-radius:50px;
+  color:#2d2340; background:linear-gradient(135deg,#ffe9a8,#eab23d);
+  font:bold 13px Arial,sans-serif; box-shadow:0 0 22px #f8cf7622;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 0 28px #f5c45b66; }
-.btn.secondary {
-  background: transparent;
-  color: var(--gold);
-  border-color: #f8cf7666;
-  box-shadow: none;
-}
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-.progress {
-  width: min(230px, 75%);
-  height: 3px;
-  border-radius: 9px;
-  background: #ffffff1b;
-  margin: 0 auto 28px;
-  overflow: hidden;
-}
-#progressFill {
-  height: 100%;
-  width: 0;
-  background: var(--gold);
-  transition: width .4s;
-}
+.btn:disabled { opacity:.8; }
+.btn.alt { background:transparent; color:var(--gold); box-shadow:none; }
+.nav { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:25px; }
 .card {
-  width: min(100%, 490px);
-  padding: 25px 20px;
-  background: linear-gradient(145deg, #16244aee, #0b1230ee);
-  border: 1px solid #f8cf7638;
-  border-radius: 22px;
-  box-shadow: 0 18px 50px #0004;
+  width:100%; padding:23px 18px; border:1px solid #f8cf7644;
+  border-radius:22px; background:#101a38cc;
+  box-shadow:0 15px 45px #0003;
 }
-.decorations {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  width: 100%;
-  max-width: 440px;
-  margin: 12px auto 20px;
+#decorScene {
+  width:100%; max-width:480px; min-height:260px; padding:22px 12px;
+  border-radius:20px; border:1px solid #f8cf7644;
+  background:linear-gradient(#172b55,#0a1029);
+  position:relative; overflow:hidden; margin:10px 0 18px;
 }
-.decoration {
-  border: 1px solid #f8cf7633;
-  background: #ffffff08;
-  color: var(--cream);
-  border-radius: 16px;
-  padding: 17px 5px;
-  min-height: 105px;
-  transition: .25s;
+.door { font-size:65px; margin:8px auto; }
+.hanging { color:var(--gold); font-size:22px; letter-spacing:7px; min-height:35px; }
+.floor { font-size:27px; min-height:43px; line-height:1.6; overflow-wrap:anywhere; }
+#decorItems {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:9px; width:100%; max-width:480px;
 }
-.decoration span { display: block; font-size: 30px; margin-bottom: 9px; }
-.decoration small { font: 11px Arial, sans-serif; color: var(--muted); }
-.decoration.done {
-  background: #f8cf7620;
-  border-color: var(--gold);
-  box-shadow: 0 0 20px #f8cf7622;
+.deco {
+  min-height:95px; border-radius:14px; border:1px solid #f8cf7644;
+  background:#ffffff09; color:var(--cream); padding:10px 3px;
 }
-#decorMessage { min-height: 25px; color: var(--gold); font: 13px Arial, sans-serif; }
-.sweet-row {
-  display: flex;
-  justify-content: center;
-  gap: 13px;
-  flex-wrap: wrap;
-  margin: 15px 0;
-}
+.deco span { display:block; font-size:29px; margin-bottom:8px; }
+.deco small { font:11px Arial,sans-serif; color:#d1d5e6; }
+.deco.selected { background:#f8cf7625; border-color:var(--gold); }
+#decorMessage { min-height:35px; color:var(--gold); font:12px/1.6 Arial,sans-serif; margin-top:15px; }
+.sweets { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin:12px 0 22px; }
 .sweet {
-  background: #ffffff09;
-  border: 1px solid #f8cf7635;
-  border-radius: 14px;
-  color: var(--cream);
-  padding: 15px 9px;
-  min-width: 90px;
+  min-width:90px; border:1px solid #f8cf7644; border-radius:15px;
+  background:#ffffff09; color:var(--cream); padding:15px 10px;
 }
-.sweet span { display: block; font-size: 29px; margin-bottom: 7px; }
-.sweet small { font: 11px Arial, sans-serif; }
-#sweetMessage { min-height: 50px; color: var(--gold); font-size: 16px; }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  width: 100%;
-  margin: 15px 0;
+.sweet span { display:block; font-size:30px; margin-bottom:8px; }
+.sweet small { font:11px Arial,sans-serif; }
+#sweetMessage { color:var(--gold); min-height:65px; font-size:15px; line-height:1.7; }
+.envelope {
+  border:1px solid #ffe5a1; background:linear-gradient(145deg,#ffe8a1,#d29b42);
+  color:#30213b; border-radius:8px 8px 20px 20px;
+  padding:27px 18px; width:min(100%,390px); margin:10px auto 20px;
+  box-shadow:0 0 35px #f8cf7622;
 }
-.photo {
-  min-width: 0;
-  min-height: 180px;
-  border-radius: 17px;
-  border: 1px solid #f8cf7645;
-  overflow: hidden;
-  background: linear-gradient(145deg, #26355f, #11172f);
-  position: relative;
+.envelope .symbol { font-size:65px; }
+.envelope p { color:#493754; }
+#letter {
+  display:none; text-align:left; width:100%; padding:25px 21px;
+  background:#fff4df; color:#33253b; border-radius:17px;
+  font:15px/1.9 Georgia,serif; white-space:normal;
+  animation:fade .6s ease;
 }
-.photo img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  display: block;
-}
-.photo .placeholder {
-  min-height: 190px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--gold);
-  font-size: 36px;
-}
-.photo .placeholder small {
-  font: 11px Arial, sans-serif;
-  color: var(--muted);
-}
-.photo label {
-  display: block;
-  padding: 11px 4px;
-  font: 12px Arial, sans-serif;
-  color: var(--gold);
-}
-.photo input { display: none; }
-.tiny-note { font: 11px/1.7 Arial, sans-serif; color: #aab3d2; }
-.letter {
-  cursor: pointer;
-  width: min(100%, 380px);
-  margin: 15px auto;
-  padding: 28px 18px;
-  background: linear-gradient(145deg, #f6d68c, #c68c3b);
-  color: #352346;
-  border-radius: 5px 5px 18px 18px;
-  box-shadow: 0 0 45px #f5c45b1c;
-  transition: transform .3s;
-}
-.letter:hover { transform: translateY(-4px); }
-.letter .envelope { font-size: 65px; }
-.letter p { color: #493754; font-size: 13px; }
-#letterContent {
-  display: none;
-  text-align: left;
-  padding: 24px;
-  border-radius: 14px;
-  background: #fff5e9;
-  color: #30233c;
-  width: min(100%, 520px);
-  font: 15px/1.9 Georgia, serif;
-  white-space: pre-line;
-  animation: appear .5s ease;
-}
-#letterContent p { color: #493754; font: 15px/1.9 Georgia, serif; }
-.gamebox {
-  width: min(100%, 480px);
-  border: 1px solid #f8cf7640;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #0d1737;
-}
-.gamehud {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px;
-  font: 12px Arial, sans-serif;
-  color: var(--gold);
-}
-#gameArea {
-  height: 310px;
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(ellipse at bottom, #243c6b, #080f29 75%);
-  touch-action: manipulation;
-}
-.heart {
-  position: absolute;
-  font-size: 30px;
-  border: none;
-  background: transparent;
-  padding: 4px;
-  animation: fall 4.5s linear forwards;
-}
-@keyframes fall {
-  from { transform: translateY(-35px) rotate(-10deg); }
-  to { transform: translateY(350px) rotate(30deg); }
-}
-#gameResult { padding: 18px; color: var(--gold); font: 13px/1.7 Arial, sans-serif; }
-footer {
-  text-align: center;
-  padding: 10px 20px 35px;
-  font: 11px Arial, sans-serif;
-  color: #7d89b2;
-}
+#letter p { color:#493754; font:15px/1.9 Georgia,serif; margin:0 0 17px; }
 #toast {
-  position: fixed;
-  z-index: 10;
-  left: 50%;
-  bottom: 25px;
-  transform: translate(-50%, 25px);
-  opacity: 0;
-  pointer-events: none;
-  background: #fff0ca;
-  color: #27203a;
-  padding: 14px 20px;
-  border-radius: 15px;
-  width: max-content;
-  max-width: 88%;
-  font: 13px/1.5 Arial, sans-serif;
-  transition: .3s;
-  box-shadow: 0 8px 30px #0006;
+  position:fixed; z-index:5; bottom:24px; left:50%;
+  transform:translate(-50%,20px); opacity:0; pointer-events:none;
+  width:max-content; max-width:90%; padding:13px 18px;
+  background:#fff0ca; color:#30213b; border-radius:15px;
+  font:13px/1.5 Arial,sans-serif; transition:.3s;
 }
-#toast.show { opacity: 1; transform: translate(-50%, 0); }
-#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 5; overflow: hidden; }
-.confetti-piece { position: absolute; top: -15px; animation: confettiFall 3s linear forwards; }
-@keyframes confettiFall {
-  to { transform: translateY(105vh) rotate(700deg); opacity: 0; }
+#toast.show { opacity:1; transform:translate(-50%,0); }
+#effects { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:4; }
+.particle { position:absolute; top:-20px; animation:fall 3s linear forwards; }
+@keyframes fall { to { transform:translateY(110vh) rotate(600deg); opacity:0; } }
+footer { position:relative; text-align:center; padding:15px 10px 30px; color:#8e9abb; font:11px Arial,sans-serif; }
+@media(max-width:420px) {
+  section { min-height:78vh; }
+  .diya { font-size:90px; }
+  #decorScene { min-height:230px; }
+  .deco { min-height:86px; }
 }
-@media (max-width: 430px) {
-  section { min-height: 78vh; padding-top: 24px; }
-  .decorations { gap: 7px; }
-  .decoration { min-height: 95px; font-size: 12px; }
-  .gallery { gap: 8px; }
-  .photo img, .photo .placeholder { height: 155px; min-height: 155px; }
-  #gameArea { height: 280px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms!important; }
 }
 </style>
 </head>
 
 <body>
-<div id="sky" aria-hidden="true"></div>
-<div id="confetti" aria-hidden="true"></div>
+<div id="sky"></div>
+<div id="effects"></div>
 <div id="toast" role="status" aria-live="polite"></div>
 
-<header>✦ A LITTLE WORLD FOR YOU ✦</header>
-<div class="progress"><div id="progressFill"></div></div>
+<header>✦ A LITTLE DEEPAVALI SURPRISE ✦</header>
+<div class="progress"><div id="bar"></div></div>
 
 <main>
-<!-- SCENE 1 -->
+
+<!-- 1: WELCOME -->
 <section id="s1" class="active">
-  <div class="eyebrow">A tiny surprise, just for you</div>
-  <div class="big-diya">🪔</div>
-  <h1>Hey, <span class="gold">Babe.</span></h1>
-  <p>I made a little something for my favourite person.<br>
-  No big reason needed. You deserve little happy moments, too. ❤️</p>
-  <button class="btn" onclick="go(2)">Come, I made this for you ✨</button>
-  <p class="tiny-note" style="margin-top:20px">Psst… tap the little stars whenever you see them.</p>
+  <div class="eyebrow">Made with all my love</div>
+  <div class="diya">🪔</div>
+  <h1>Happy Deepavali,<br><span class="gold">Bangaara!</span></h1>
+  <p>I have a little surprise for you, my favourite person. ❤️<br>
+  Come with me. Let's make our own little Deepavali magic.</p>
+  <button class="btn" onclick="go(2)">Let's begin, Bangaara ✨</button>
 </section>
 
-<!-- SCENE 2 -->
+<!-- 2: LIGHT THE DIYA -->
 <section id="s2">
-  <div class="eyebrow">First, a little light</div>
-  <div class="big-diya" id="diya">🪔</div>
+  <div class="eyebrow">Our little light</div>
+  <div class="diya" id="mainDiya">🪔</div>
   <h2>Every little light<br>makes a <span class="gold">difference.</span></h2>
-  <p>Just like you make ordinary days feel a little more special.</p>
-  <button class="btn" id="lightBtn" onclick="lightDiya()">Light our diya 🕯️</button>
-  <div id="diyaMessage" class="gold"></div>
-  <div class="nav"><button class="btn secondary" onclick="go(1)">← Back</button><button class="btn" onclick="go(3)">Next surprise →</button></div>
-</section>
-
-<!-- SCENE 3 -->
-<section id="s3">
-  <div class="eyebrow">Your little corner of magic</div>
-  <h2>Let's make this night<br><span class="gold">a little brighter.</span></h2>
-  <p>Tap each decoration and let's make our own tiny festive world.</p>
-  <div class="decorations">
-    <button class="decoration" onclick="decorate(this,'🪔','A little light for every one of your dreams.')"><span>🪔</span><small>Light a diya</small></button>
-    <button class="decoration" onclick="decorate(this,'✨','May life give you a thousand reasons to smile.')"><span>✨</span><small>Fairy lights</small></button>
-    <button class="decoration" onclick="decorate(this,'🌼','A little sunshine, because you deserve it.')"><span>🌼</span><small>Flowers</small></button>
-    <button class="decoration" onclick="decorate(this,'💛','Sending you a hug, even from far away.')"><span>💛</span><small>A warm hug</small></button>
-    <button class="decoration" onclick="decorate(this,'🌙','My favourite view is a world where you are happy.')"><span>🌙</span><small>Moonlight</small></button>
-    <button class="decoration" onclick="decorate(this,'❤️','And obviously… one for all my love.')"><span>❤️</span><small>Lots of love</small></button>
+  <p>Bangaara, before anything else, I want you to light our little diya. Tap it and make our night shine. ❤️</p>
+  <button class="btn" id="lightButton" onclick="lightDiya()">Light our diya 🪔</button>
+  <p id="lightMessage" class="gold" style="margin-top:17px;min-height:25px"></p>
+  <div class="nav">
+    <button class="btn alt" onclick="go(1)">← Back</button>
+    <button class="btn" onclick="go(3)">Let's decorate →</button>
   </div>
-  <div id="decorMessage">0 of 6 decorations discovered</div>
-  <div class="nav"><button class="btn secondary" onclick="go(2)">← Back</button><button class="btn" onclick="go(4)">Something sweet →</button></div>
 </section>
 
-<!-- SCENE 4 -->
+<!-- 3: DECORATE THE DIWALI CORNER -->
+<section id="s3">
+  <div class="eyebrow">Our tiny festive world</div>
+  <h2>Decorate our<br><span class="gold">Deepavali corner.</span></h2>
+  <p>Now it's your turn, Bangaara! Tap each decoration to make our little corner beautiful. ✨</p>
+
+  <div id="decorScene">
+    <div class="hanging" id="lights">· · · · · · · · ·</div>
+    <div class="door" id="door">🚪</div>
+    <div class="floor" id="floor">· · · · · · · ·</div>
+    <p style="font-size:12px;margin:8px auto 0">Our little home, filled with love ❤️</p>
+  </div>
+
+  <div id="decorItems">
+    <button class="deco" onclick="decorate('diya',this)">
+      <span>🪔</span><small>Add diyas</small>
+    </button>
+    <button class="deco" onclick="decorate('lights',this)">
+      <span>✨</span><small>Fairy lights</small>
+    </button>
+    <button class="deco" onclick="decorate('flowers',this)">
+      <span>🌼</span><small>Flower toran</small>
+    </button>
+    <button class="deco" onclick="decorate('rangoli',this)">
+      <span>🌸</span><small>Rangoli</small>
+    </button>
+    <button class="deco" onclick="decorate('lantern',this)">
+      <span>🏮</span><small>Lanterns</small>
+    </button>
+    <button class="deco" onclick="decorate('hearts',this)">
+      <span>❤️</span><small>Add our love</small>
+    </button>
+  </div>
+  <div id="decorMessage">Decorations added: 0 of 6 ✨</div>
+  <div class="nav">
+    <button class="btn alt" onclick="go(2)">← Back</button>
+    <button class="btn" onclick="go(4)">A sweet surprise →</button>
+  </div>
+</section>
+
+<!-- 4: SWEET SURPRISES -->
 <section id="s4">
   <div class="eyebrow">A little sweetness for you</div>
-  <h2>Life is sweeter<br><span class="gold">with you in it.</span></h2>
-  <p>Pick a sweet. Each one has a tiny message hidden inside. 🍬</p>
-  <div class="sweet-row">
+  <h2>Deepavali is sweeter<br><span class="gold">with you.</span></h2>
+  <p>Pick a sweet, Bangaara. I have hidden a little message in each one. 💛</p>
+  <div class="sweets">
     <button class="sweet" onclick="sweet(0)"><span>🍯</span><small>Sweetness</small></button>
     <button class="sweet" onclick="sweet(1)"><span>🍬</span><small>Happiness</small></button>
     <button class="sweet" onclick="sweet(2)"><span>🍫</span><small>Hugs</small></button>
   </div>
-  <div id="sweetMessage">Your surprise is waiting…</div>
-  <div class="nav"><button class="btn secondary" onclick="go(3)">← Back</button><button class="btn" onclick="go(5)">Our memories 📸 →</button></div>
+  <div id="sweetMessage">Choose a sweet to discover your message…</div>
+  <div class="nav">
+    <button class="btn alt" onclick="go(3)">← Back</button>
+    <button class="btn" onclick="go(5)">A letter for you 💌 →</button>
+  </div>
 </section>
 
-<!-- SCENE 5 -->
+<!-- 5: YOUR EXACT LETTER -->
 <section id="s5">
-  <div class="eyebrow">Little moments, big feelings</div>
-  <h2>Our little <span class="gold">memory corner.</span></h2>
-  <p>Some of my favourite things are the moments that are just ours.</p>
-  <div class="gallery">
-    <div class="photo">
-      <div class="placeholder" id="placeholder1">📷<small>Add our photo 1</small></div>
-      <img id="img1" alt="Our memory 1" hidden>
-      <label for="file1">Memory one ❤️</label>
-      <input id="file1" type="file" accept="image/*" onchange="previewPhoto(event,1)">
-    </div>
-    <div class="photo">
-      <div class="placeholder" id="placeholder2">🌅<small>Add our photo 2</small></div>
-      <img id="img2" alt="Our memory 2" hidden>
-      <label for="file2">Memory two ✨</label>
-      <input id="file2" type="file" accept="image/*" onchange="previewPhoto(event,2)">
-    </div>
-    <div class="photo">
-      <div class="placeholder" id="placeholder3">🥹<small>Add our photo 3</small></div>
-      <img id="img3" alt="Our memory 3" hidden>
-      <label for="file3">Memory three 💛</label>
-      <input id="file3" type="file" accept="image/*" onchange="previewPhoto(event,3)">
-    </div>
-    <div class="photo">
-      <div class="placeholder" id="placeholder4">🌙<small>Add our photo 4</small></div>
-      <img id="img4" alt="Our memory 4" hidden>
-      <label for="file4">Memory four 🌙</label>
-      <input id="file4" type="file" accept="image/*" onchange="previewPhoto(event,4)">
-    </div>
-  </div>
-  <p class="tiny-note">Photo uploads here are only previews on your current device. See the photo instructions below to make them visible to him, too.</p>
-  <div class="nav"><button class="btn secondary" onclick="go(4)">← Back</button><button class="btn" onclick="go(6)">One little game →</button></div>
-</section>
+  <div class="eyebrow">A little message from my heart</div>
+  <h2>For my <span class="gold">Bangaara.</span></h2>
+  <p>There are some things I want you to read slowly, with all my love. ❤️</p>
 
-<!-- SCENE 6 -->
-<section id="s6">
-  <div class="eyebrow">A tiny challenge for my favourite person</div>
-  <h2>Catch <span class="gold">5 hearts.</span></h2>
-  <p>Collect five floating hearts to unlock a special message. You've got this, babe! 💛</p>
-  <div class="gamebox">
-    <div class="gamehud"><span>❤️ Hearts: <b id="score">0</b>/5</span><span>Time: <b id="time">20</b>s</span></div>
-    <div id="gameArea">
-      <div style="padding-top:90px;color:#aab3d2;font:13px Arial,sans-serif" id="gameIntro">Ready when you are… ✨</div>
-    </div>
-    <div id="gameResult">Your little surprise is waiting for you.</div>
-  </div>
-  <button class="btn" id="gameBtn" onclick="startGame()">Start the game 💖</button>
-  <div class="nav"><button class="btn secondary" onclick="go(5)">← Back</button><button class="btn" onclick="go(7)">Open your letter 💌 →</button></div>
-</section>
-
-<!-- SCENE 7 -->
-<section id="s7">
-  <div class="eyebrow">Something I wanted to tell you</div>
-  <h2>For you, <span class="gold">Babe.</span></h2>
-  <p>There's something here that you need to open yourself.</p>
-  <button class="letter" id="envelope" onclick="openLetter()">
-    <div class="envelope">💌</div>
-    <h2 style="font-size:25px">A letter for you</h2>
-    <p>Tap to open, my favourite person.</p>
+  <button class="envelope" id="envelope" onclick="openLetter()">
+    <div class="symbol">💌</div>
+    <h2 style="font-size:26px">A letter for you</h2>
+    <p>Tap to open, my cutest pataki. 🥹</p>
   </button>
-  <article id="letterContent">
-    <p><strong>My favourite person, ❤️</strong></p>
-    <p>Sometimes I wish I could just be next to you, hold your hand, and tell you all of this without needing a screen between us.</p>
-    <p>We've had our silly fights, our misunderstandings, our random conversations, and so many little moments that mean more to me than I can explain. I love that we can laugh about the most random things, too.</p>
-    <p>I feel really lucky to have you in my life. I love the person you are, the little things that make you you, and the memories we're making together.</p>
-    <p>I hope we keep choosing each other, learning about each other, laughing together, and making a whole lot more memories. I can't imagine my days without our little conversations and your place in my life.</p>
-    <p>And if today has been difficult, please remember that you don't have to be perfect or have everything figured out. I hope you give yourself the same kindness that you give the people you love.</p>
-    <p>Sending you the biggest hug until I can give you a real one. 🫂❤️</p>
-    <p><strong>Always cheering for you,<br>Your girl 💛</strong></p>
+
+  <article id="letter">
+    <p><strong>Happy Deepavali, Bangaara! 🪔❤️</strong></p>
+
+    <p>Maybe we are in different cities today, but one day, we will celebrate Deepavali together. ❤️</p>
+
+    <p>You are the light that brightens my darkest days, and you are my cutest pataki! 🥹💖</p>
+
+    <p>Wishing you lots of happiness, good health, prosperity, and endless success this Deepavali. May your life always shine as brightly as the lights of this beautiful festival.</p>
+
+    <p>No matter how far apart we are today, you will always have a special place in my heart. ❤️🫂</p>
+
+    <p><strong>Happy Deepavali, my Bangaara! 🪔😘❤️</strong></p>
   </article>
-  <div class="nav"><button class="btn secondary" onclick="go(6)">← Back</button><button class="btn" onclick="go(8)">One last thing… ✨</button></div>
-</section>
 
-<!-- SCENE 8 -->
-<section id="s8">
-  <div class="eyebrow">And one last little thing</div>
-  <div class="big-diya">💛</div>
-  <h1>You're my<br><span class="gold">favourite person.</span></h1>
-  <p>Out of all the people, all the places, and all the possibilities in this huge world… I'm really glad our paths crossed.</p>
-  <div class="card">
-    <p style="margin-bottom:8px;color:var(--gold)">A tiny reminder, just for you</p>
-    <h2 style="font-size:27px">You are loved.<br>You are appreciated.<br>You matter to me.</h2>
-    <p>And yes, you are stuck with someone who will keep sending you random thoughts. 😂❤️</p>
+  <div class="nav">
+    <button class="btn alt" onclick="go(4)">← Back</button>
+    <button class="btn" onclick="go(6)">One last surprise… ❤️</button>
   </div>
-  <button class="btn" onclick="celebrate()">Send a shower of love ✨</button>
-  <div class="nav"><button class="btn secondary" onclick="go(1)">Experience it again ↺</button><button class="btn secondary" onclick="go(7)">Read my letter again 💌</button></div>
 </section>
-</main>
 
-<footer>Made with love, a little sparkle, and lots of heart. ❤️</footer>
+<!-- 6: ENDING -->
+<section id="s6">
+  <div class="eyebrow">Until we celebrate together</div>
+  <div class="diya">🪔</div>
+  <h1>One day,<br><span class="gold">together.</span></h1>
+  <div class="card">
+    <h2 style="font-size:27px">Until then, my Bangaara… ❤️</h2>
+    <p>May every diya remind you that someone, somewhere, is wishing the very best for you and cheering for every dream you chase.</p>
+    <p>One day, we'll light diyas together, decorate our own little corner, eat all the sweets, and make beautiful memories side by side. 🥹🫂</p>
+    <h2 style="font-size:25px;color:var(--gold)">Happy Deepavali, my love! 😘</h2>
+  </div>
+  <button class="btn" onclick="celebrate()">Send me a little sparkle ✨</button>
+  <div class="nav">
+    <button class="btn alt" onclick="go(1)">Experience it again ↺</button>
+    <button class="btn alt" onclick="go(5)">Read my letter again 💌</button>
+  </div>
+</section>
+
+</main>
+<footer>Made with love, just for my Bangaara. ❤️</footer>
 
 <script>
-const $ = id => document.getElementById(id);
-let currentScene = 1;
-let lit = false;
-let decorated = new Set();
-let foundSweets = new Set();
-let gameTimer = null;
-let spawnTimer = null;
-let score = 0;
-let seconds = 20;
-let playing = false;
-let toastTimer = null;
-
-// Make the night sky
-const sky = $("sky");
-for (let i = 0; i < 95; i++) {
-  const star = document.createElement("span");
-  star.className = "star";
-  star.style.left = Math.random() * 100 + "%";
-  star.style.top = Math.random() * 100 + "%";
-  star.style.setProperty("--speed", (1.5 + Math.random() * 4) + "s");
-  star.style.animationDelay = (Math.random() * 4) + "s";
-  if (i % 9 === 0) {
-    star.style.width = "5px";
-    star.style.height = "5px";
-    star.style.background = "#f8cf76";
-    star.style.boxShadow = "0 0 12px #f8cf76";
-    star.style.pointerEvents = "auto";
-    star.style.cursor = "pointer";
-    star.title = "A little note for you";
-    star.addEventListener("click", () => {
-      const notes = [
-        "You're someone's favourite notification. ❤️",
-        "Don't forget to take care of yourself, okay? 💛",
-        "Sending you a hug from wherever I am. 🫂",
-        "Here's your reminder that you're special to me. ✨",
-        "I hope something makes you smile today. 🥹"
-      ];
-      toast(notes[Math.floor(Math.random() * notes.length)]);
-      celebrateSmall();
-    });
+// Create the starry sky
+const sky = document.getElementById("sky");
+for (let i=0;i<90;i++) {
+  const s=document.createElement("span");
+  s.className="star";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.animationDelay=Math.random()*4+"s";
+  if(i%8===0){
+    s.style.width="5px";
+    s.style.height="5px";
+    s.style.background="#f8cf76";
+    s.style.boxShadow="0 0 12px #f8cf76";
+    s.style.pointerEvents="auto";
+    s.style.cursor="pointer";
+    s.onclick=()=>toast("A little sparkle for my Bangaara. ❤️");
   }
-  sky.appendChild(star);
+  sky.appendChild(s);
 }
 
-function go(n) {
-  clearInterval(gameTimer);
-  clearInterval(spawnTimer);
-  playing = false;
-  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-  $("s" + n).classList.add("active");
-  currentScene = n;
-  $("progressFill").style.width = ((n - 1) / 7 * 100) + "%";
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  if (n === 8) setTimeout(celebrateSmall, 250);
+let lit=false;
+const decorations=new Set();
+const sweets=new Set();
+
+function go(n){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById("s"+n).classList.add("active");
+  document.getElementById("bar").style.width=((n-1)/5*100)+"%";
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
-function toast(message) {
-  $("toast").textContent = message;
-  $("toast").classList.add("show");
+let toastTimer;
+function toast(message){
+  const t=document.getElementById("toast");
+  t.textContent=message;
+  t.classList.add("show");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => $("toast").classList.remove("show"), 2800);
+  toastTimer=setTimeout(()=>t.classList.remove("show"),2600);
 }
 
-function lightDiya() {
-  if (lit) {
-    toast("Our little light is still glowing. ❤️");
-    return;
-  }
-  lit = true;
-  $("diya").style.transform = "scale(1.14)";
-  $("diyaMessage").textContent = "A little light for all your dreams. ❤️";
-  $("lightBtn").textContent = "Our diya is glowing ✨";
-  $("lightBtn").disabled = true;
+function lightDiya(){
+  if(lit){toast("Our little diya is already glowing, Bangaara! ❤️");return;}
+  lit=true;
+  document.getElementById("mainDiya").classList.add("lit");
+  document.getElementById("lightButton").textContent="Our diya is glowing! ✨";
+  document.getElementById("lightButton").disabled=true;
+  document.getElementById("lightMessage").textContent=
+    "You just made our little world brighter. May your life always shine. ❤️";
   celebrateSmall();
 }
 
-function decorate(button, emoji, message) {
-  button.classList.add("done");
-  button.querySelector("span").textContent = emoji;
-  decorated.add(button);
-  $("decorMessage").textContent = decorated.size + " of 6 decorations discovered";
-  toast(message);
-  if (decorated.size === 6) {
-    $("decorMessage").textContent = "Our little corner is full of love. ✨";
-    celebrateSmall();
-  }
-}
-
-const sweetNotes = [
-  "A spoonful of sweetness for all the effort you put into everything. I'm proud of you. 💛",
-  "One box of happiness, packed with silly laughs and random conversations. 😂❤️",
-  "A million hugs for you. Redeemable whenever you need one. No expiry date. 🫂"
-];
-function sweet(i) {
-  $("sweetMessage").textContent = sweetNotes[i];
-  foundSweets.add(i);
-  if (foundSweets.size === 3) toast("You found all three sweet messages! 🍬");
-}
-
-function previewPhoto(event, number) {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
-  if (!file.type.startsWith("image/")) {
-    toast("Please select an image file.");
+function decorate(type,button){
+  const scene=document.getElementById("decorScene");
+  if(decorations.has(type)){
+    toast("You already added this decoration, Bangaara! 💛");
     return;
   }
-  if (file.size > 8 * 1024 * 1024) {
-    toast("Please choose a photo smaller than 8 MB.");
-    return;
+  decorations.add(type);
+  button.classList.add("selected");
+
+  const floor=document.getElementById("floor");
+  const lights=document.getElementById("lights");
+  const door=document.getElementById("door");
+
+  if(type==="diya"){
+    floor.textContent="🪔  🪔  🪔  🪔  🪔";
+    floor.style.filter="drop-shadow(0 0 8px #ffc34a)";
   }
-  const reader = new FileReader();
-  reader.onload = () => {
-    $("img" + number).src = reader.result;
-    $("img" + number).hidden = false;
-    $("placeholder" + number).hidden = true;
-  };
-  reader.readAsDataURL(file);
-}
+  if(type==="lights"){
+    lights.textContent="✨ ✨ ✨ ✨ ✨ ✨ ✨";
+    lights.style.textShadow="0 0 12px #ffdc73";
+  }
+  if(type==="flowers"){
+    lights.textContent="🌼 🌼 🌼 🌼 🌼 🌼";
+  }
+  if(type==="rangoli"){
+    floor.textContent="🌸 🌼 🌺 🌼 🌸";
+    floor.style.fontSize="32px";
+  }
+  if(type==="lantern"){
+    door.textContent="🏮🚪🏮";
+  }
+  if(type==="hearts"){
+    door.textContent="❤️🚪❤️";
+    toast("Our little home is filled with love! ❤️");
+  }
 
-function openLetter() {
-  $("envelope").style.display = "none";
-  $("letterContent").style.display = "block";
-  celebrateSmall();
-}
+  document.getElementById("decorMessage").textContent=
+    "Decorations added: "+decorations.size+" of 6 ✨";
 
-function startGame() {
-  clearInterval(gameTimer);
-  clearInterval(spawnTimer);
-  score = 0;
-  seconds = 20;
-  playing = true;
-  $("score").textContent = score;
-  $("time").textContent = seconds;
-  $("gameResult").textContent = "Catch those hearts! ❤️";
-  $("gameIntro").style.display = "none";
-  $("gameArea").querySelectorAll(".heart").forEach(h => h.remove());
-  $("gameBtn").textContent = "Game in progress…";
-  $("gameBtn").disabled = true;
-
-  spawnTimer = setInterval(() => {
-    if (!playing) return;
-    const area = $("gameArea");
-    const heart = document.createElement("button");
-    heart.className = "heart";
-    heart.textContent = Math.random() > .45 ? "💖" : "💛";
-    heart.setAttribute("aria-label", "Catch heart");
-    heart.style.left = (Math.random() * (area.clientWidth - 45)) + "px";
-    heart.style.top = "-40px";
-    heart.style.animationDuration = (2.5 + Math.random() * 1.5) + "s";
-    heart.onclick = () => {
-      if (!playing) return;
-      score++;
-      $("score").textContent = score;
-      heart.remove();
-      if (score >= 5) finishGame(true);
-    };
-    area.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }, 650);
-
-  gameTimer = setInterval(() => {
-    seconds--;
-    $("time").textContent = seconds;
-    if (seconds <= 0) finishGame(score >= 5);
-  }, 1000);
-}
-
-function finishGame(won) {
-  if (!playing) return;
-  playing = false;
-  clearInterval(gameTimer);
-  clearInterval(spawnTimer);
-  $("gameArea").querySelectorAll(".heart").forEach(h => h.remove());
-  $("gameBtn").disabled = false;
-  $("gameBtn").textContent = won ? "Play again 💖" : "Try again ❤️";
-  if (won) {
-    $("gameResult").textContent = "You did it! Your surprise: you're officially my favourite human. No competition. 😂❤️";
+  if(decorations.size===6){
+    document.getElementById("decorMessage").textContent=
+      "Our little Deepavali corner is complete! Beautiful, just like us. ❤️";
+    toast("You decorated our little world, Bangaara! 🪔");
     celebrateSmall();
   } else {
-    $("gameResult").textContent = "So close! Five hearts are waiting for you. One more try? 🥹";
+    toast("Beautiful! Let's add a little more magic. ✨");
   }
 }
 
-function celebrateSmall() {
-  for (let i = 0; i < 12; i++) {
-    const piece = document.createElement("span");
-    piece.className = "confetti-piece";
-    piece.textContent = ["✨", "💛", "❤️", "✦"][Math.floor(Math.random() * 4)];
-    piece.style.left = (Math.random() * 100) + "%";
-    piece.style.fontSize = (12 + Math.random() * 15) + "px";
-    piece.style.animationDuration = (1.8 + Math.random() * 1.5) + "s";
-    $("confetti").appendChild(piece);
-    setTimeout(() => piece.remove(), 3500);
+const messages=[
+  "A little sweetness for the sweetest person in my life. I'm so lucky to have you. 💛",
+  "May your days be filled with laughter, happiness, and all the things your heart wishes for. 🪔",
+  "A million hugs for you, Bangaara. Saving the real ones for when we're together. 🫂❤️"
+];
+
+function sweet(i){
+  document.getElementById("sweetMessage").textContent=messages[i];
+  sweets.add(i);
+  if(sweets.size===3)toast("You found all three sweet messages! 🍬❤️");
+}
+
+function openLetter(){
+  document.getElementById("envelope").style.display="none";
+  document.getElementById("letter").style.display="block";
+  celebrateSmall();
+}
+
+function celebrateSmall(){
+  const container=document.getElementById("effects");
+  const icons=["✨","💛","❤️","🌟","🪔"];
+  for(let i=0;i<24;i++){
+    const el=document.createElement("span");
+    el.className="particle";
+    el.textContent=icons[Math.floor(Math.random()*icons.length)];
+    el.style.left=Math.random()*100+"%";
+    el.style.fontSize=(14+Math.random()*15)+"px";
+    el.style.animationDuration=(2+Math.random()*2)+"s";
+    container.appendChild(el);
+    setTimeout(()=>el.remove(),4500);
   }
 }
-function celebrate() {
+
+function celebrate(){
   celebrateSmall();
-  setTimeout(celebrateSmall, 350);
-  toast("Sending the biggest virtual hug to you! 🫂❤️");
+  toast("A big virtual hug for my Bangaara! 🫂😘❤️");
 }
 </script>
 </body>
 </html>
+
+    
+        
+    
